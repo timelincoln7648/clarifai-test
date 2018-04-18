@@ -10,6 +10,7 @@ const clarifaiApp = new Clarifai.App({
 });
 
 var app = express();
+
 app.set("view engine", "ejs");app.set('trust proxy', 1);
 app.use(session({
     secret: config.SECRET,
@@ -19,15 +20,19 @@ app.use(session({
 }));
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
-
+app.use(function(req, res, next) {
+  res.locals = req.session;
+  next();
+});
 
 //ROUTES
 
 // Home Page
 app.get('/', function(req, res) {
-
+    
+    
     if (req.session.predictions) {
-        // do something with response
+       // do something with response
         var predictions = req.session.predictions;
         console.log("\nClarifai predictions: \n\n");
         var length = Object.keys(predictions.concepts).length
@@ -35,10 +40,12 @@ app.get('/', function(req, res) {
         for (var i=0; i<length; i++){
             var prediction = predictions.concepts[i]
             console.log(prediction.name+" - "+prediction.value);
-        }
+        } 
     }
     
+    
     res.render('home');
+   
 });
 
 app.post('/runClarifai', function(req, res) {

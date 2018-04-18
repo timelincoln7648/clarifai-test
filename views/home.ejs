@@ -19,15 +19,24 @@
     </form>  
 </div>
 
-<!--<div id="logo" class="ui container">-->
-<!--     <div>-->
-<!--        <p>-->
-<!--            <a href="/runClarifai">-->
-<!--                <img border="0" alt="W3Schools" src="https://pbs.twimg.com/profile_images/973226386486829057/a_xn4grB_400x400.jpg" width="200">-->
-<!--            </a>-->
-<!--        </p>-->
-<!--    </div>-->
-<!--</div>-->
+<% if (locals.predictions) { %>
+
+    <h2>Predictions</h2>
+    <br>
+    
+    <ul>
+        
+    <% var length = Object.keys(locals.predictions.concepts).length %>
+    
+    <% for (var i=0; i<length; i++){ %>
+        <% var prediction = locals.predictions.concepts[i] %>
+        <li><%= prediction.name %> - <%= prediction.value %></li>
+    <% } %>
+        
+    </ul>
+    
+<% } %>
+   
 
 
 
