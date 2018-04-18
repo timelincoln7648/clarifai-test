@@ -1,0 +1,38 @@
+
+.icon {
+  font-size: 2em;
+}
+
+.container {
+  text-align: center;
+}
+
+.container.main {
+  margin-top: 7.0em;
+  text-align: center;
+}
+
+#inputField {
+  margin-top: 2.5em;
+}
+
+#logo {
+  margin-top: 1.0em;
+}
+
+#mainBox {
+  text-align: center;
+}
+
+
+h1 {
+    margin-left: 2em;
+}
+
+p span {
+  margin-left: 2em;
+}
+
+body {
+  margin-left: 2em;
+}

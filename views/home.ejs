@@ -1,0 +1,36 @@
+<% include partials/header %>
+
+<div  class="ui main container">
+    <p>
+        <h2>Enter an image URL</h2>
+        and click below to run Clarifai
+    </p>
+</div>
+
+<div id="inputField" class="container main">
+    <form class="ui form"  action="/runClarifai" method="post">
+        <div class="ui input">
+            <input type="text" name="inputImgURL">
+        </div>
+        <br>
+        <br>
+        <!--<input type="submit" value="Run" class="ui green button"/>-->
+        <input type="image" alt="Run" id="logo" src="https://pbs.twimg.com/profile_images/973226386486829057/a_xn4grB_400x400.jpg" width="100"/>
+    </form>  
+</div>
+
+<!--<div id="logo" class="ui container">-->
+<!--     <div>-->
+<!--        <p>-->
+<!--            <a href="/runClarifai">-->
+<!--                <img border="0" alt="W3Schools" src="https://pbs.twimg.com/profile_images/973226386486829057/a_xn4grB_400x400.jpg" width="200">-->
+<!--            </a>-->
+<!--        </p>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+
+
+
+<% include partials/footer %>
