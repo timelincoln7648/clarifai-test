@@ -19,27 +19,44 @@
     </form>  
 </div>
 
+<!-- you have predictions to show -->
 <% if (locals.predictions) { %>
 
-    <h2>Predictions</h2>
-    <br>
+
+<!-- SemanticUI Grid -->
+
+<div class="push-down-small ui container">
+<div class="ui grid">
+<div class="four wide column"></div>
+  <div class="four wide column">
+      <!-- image -->
+      
+      <% if(locals.imgURL) { %>
+        <img class="push-down-medium ui medium rounded image" src=<%= locals.imgURL %> >
+
+        <% } %>
+      
+  </div>
+  <div class="four wide column">
     
-    <ul>
+      <!-- predictions -->
+      
+        <h2 class="left">Predictions</h2>
+        <ul>
+            
+        <% var length = Object.keys(locals.predictions.concepts).length %>
         
-    <% var length = Object.keys(locals.predictions.concepts).length %>
-    
-    <% for (var i=0; i<length; i++){ %>
-        <% var prediction = locals.predictions.concepts[i] %>
-        <li><%= prediction.name %> - <%= prediction.value %></li>
-    <% } %>
-        
-    </ul>
-    
+        <% for (var i=0; i<length; i++){ %>
+            <% var prediction = locals.predictions.concepts[i] %>
+            <li class="left"><%= prediction.name %> - <%= prediction.value %></li>
+        <% } %>
+            
+        </ul>
+  </div>
+ <div class="four wide column"></div>
+</div>
+</div>
 <% } %>
    
-
-
-
-
 
 <% include partials/footer %>

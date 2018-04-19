@@ -12,6 +12,18 @@
   text-align: center;
 }
 
+.push-down-medium {
+  margin-top: 6.0em;
+}
+
+.push-down-small {
+  margin-top: 4.0em;
+}
+
+.left {
+  text-align: left;
+}
+
 #inputField {
   margin-top: 2.5em;
 }

@@ -51,6 +51,7 @@ app.get('/', function(req, res) {
 app.post('/runClarifai', function(req, res) {
     
     const imgURL = req.body.inputImgURL;
+    req.session.imgURL = imgURL;
     
     clarifaiApp.models.predict(Clarifai.GENERAL_MODEL, imgURL).then(
       function(response) {
